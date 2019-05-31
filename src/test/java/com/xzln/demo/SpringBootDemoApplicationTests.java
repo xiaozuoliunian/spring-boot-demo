@@ -5,13 +5,12 @@ import com.xzln.demo.service.IUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -23,6 +22,12 @@ public class SpringBootDemoApplicationTests {
 
     @Resource
     private IUserService userService;
+
+    @Resource
+    private RedisTemplate redisTemplate;
+
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
 
     //@Test
     public void mySqlTest(){
@@ -40,7 +45,7 @@ public class SpringBootDemoApplicationTests {
         }
     }
 
-    @Test
+    //@Test
     public void testMybatis(){
         List<User> userList = userService.findAll();
         for (User user : userList){
@@ -49,7 +54,23 @@ public class SpringBootDemoApplicationTests {
     }
 
     @Test
-    public void contextLoads() {
-    }
+    public void testRedis(){
+        // 增key:name, value:ay
+        redisTemplate.opsForValue().set("name", "ay");
+        String value = (String) redisTemplate.opsForValue().get("name");
+        System.out.println("增加：name ,值为："+ value);
 
+        // 更新
+        redisTemplate.opsForValue().set("name", "gx");
+        String gx = (String) redisTemplate.opsForValue().get("name");
+        String gx1 = stringRedisTemplate.opsForValue().get("name");
+        System.out.println("更新：name, 值为：" + gx);
+        System.out.println("更新：name, 值为：" + gx1);
+
+        // 删除
+        redisTemplate.delete("name");
+        String sc = (String) redisTemplate.opsForValue().get("name");
+        System.out.println("删除：name, 值为：" + sc);
+
+   }
 }
