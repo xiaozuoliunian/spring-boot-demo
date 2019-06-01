@@ -1,6 +1,6 @@
-package com.xzln.demo.dao;
+package com.xzln.demo.business.dao;
 
-import com.xzln.demo.model.User;
+import com.xzln.demo.business.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

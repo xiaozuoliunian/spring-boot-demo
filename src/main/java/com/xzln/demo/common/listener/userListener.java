@@ -1,4 +1,4 @@
-package com.xzln.demo.listener;
+package com.xzln.demo.common.listener;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

@@ -1,8 +1,8 @@
-package com.xzln.demo.service.impl;
+package com.xzln.demo.business.service.impl;
 
-import com.xzln.demo.dao.IUserDao;
-import com.xzln.demo.model.User;
-import com.xzln.demo.service.IUserService;
+import com.xzln.demo.business.dao.IUserDao;
+import com.xzln.demo.business.model.User;
+import com.xzln.demo.business.service.IUserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

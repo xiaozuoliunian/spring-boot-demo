@@ -1,7 +1,7 @@
-package com.xzln.demo.controller;
+package com.xzln.demo.business.controller;
 
-import com.xzln.demo.model.User;
-import com.xzln.demo.service.IUserService;
+import com.xzln.demo.business.model.User;
+import com.xzln.demo.business.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

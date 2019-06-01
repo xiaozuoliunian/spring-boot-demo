@@ -1,4 +1,4 @@
-package com.xzln.demo.model;
+package com.xzln.demo.business.model;
 
 /**
  * @author Administrator

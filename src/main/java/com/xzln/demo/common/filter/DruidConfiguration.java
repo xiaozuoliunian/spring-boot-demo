@@ -1,4 +1,4 @@
-package com.xzln.demo.filter;
+package com.xzln.demo.common.filter;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
